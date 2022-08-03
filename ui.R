@@ -1,8 +1,6 @@
 # Import all UI
 dir.plugins.ui.files = grep("/ui/",list.files(dir.plugins, pattern = "\\.[Rr]$", full.names = TRUE, recursive = TRUE), value = TRUE)
-
-print(dir.plugins.ui.files)
-lapply(dir.plugins.ui.files,source,local = TRUE)
+for(file in dir.plugins.ui.files) source(file,local = TRUE)
 
 
 content.leftSide <- column(
@@ -22,13 +20,13 @@ content.rightSide <- column(
 # Declare UI function
 ui <- fluidPage(
   # Choose style
-  style = "8",
+  style = "5",
   
   # Set a custom background-color
-  custom.bg.color = "#E5E5E5",
+   custom.bg.color = "#EAE7D4",
   
-  # Application title
-  title = titlePanel("Blank BoilerPlate"),
+  # Application header
+  header = titlePanel(left="Blank Minimal NexGenShinyApps BoilerPlate"),
   
   # Initialize automatic tracking for all
   # the app inputs
