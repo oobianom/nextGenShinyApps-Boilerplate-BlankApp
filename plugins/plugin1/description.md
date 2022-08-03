@@ -1,0 +1,1 @@
+The description of the content housed in plugin 1
