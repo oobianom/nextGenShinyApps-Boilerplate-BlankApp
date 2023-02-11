@@ -65,7 +65,7 @@ server <- function(input, output, session) {
   # make plots
   output$sampleplot <- renderPlot({
     plot(x = sample(1:input$bins, 32, replace = TRUE),
-         y = mtcars$hp)
+         y = mtcars$hp*input$range[1])
   })
 }
 
