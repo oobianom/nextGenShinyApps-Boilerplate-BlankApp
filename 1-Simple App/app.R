@@ -40,8 +40,8 @@ ui <- fluidPage(
   altPanel(card(
     title = "Moveable card container #2",
     "Move card, refresh and see that changes remain"
-  )
-  ,card(
+  ),
+  card(
     title = "Moveable card container",
     # card body content
     alert.text = "Realize that this card contains a status bar. More info at rpkg.net",
@@ -57,19 +57,21 @@ ui <- fluidPage(
       max = 50,
       value = 30
     )
-  ), width = 12)
+  ),
+  width = 12
+  )
 )
 
-server <- function(input, output, session){
+server <- function(input, output, session) {
 
   # make plots
   output$sampleplot <- renderPlot({
-    plot(x =sample(1:input$bins,32, replace = TRUE), y = mtcars$hp)
+    plot(x = sample(1:input$bins, 32, replace = TRUE), y = mtcars$hp)
   })
 
   # include shinyStorePlus to track input
-  appid = "application501"
-  setupStorage(appId = appid,inputs = TRUE)
+  appid <- "application501"
+  setupStorage(appId = appid, inputs = TRUE)
 }
 
 
