@@ -35,9 +35,8 @@ ui <- fluidPage(
   altPanel(card(
     title = "Moveable card container #2",
     "Move card, refresh and see that changes remain"
-  ), width = 12)
-  ,
-  altPanel(card(
+  )
+  ,card(
     title = "Moveable card container",
     # card body content
     alert.text = "Realize that this card contains a status bar. More info at rpkg.net",
