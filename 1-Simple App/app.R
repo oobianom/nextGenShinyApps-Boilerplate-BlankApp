@@ -32,6 +32,11 @@ ui <- fluidPage(
       value = c(200, 500)
     )
   ),
+
+  # Initiate shinyStorPlus
+  initStore(),
+
+  # Body --------------------------------------
   altPanel(card(
     title = "Moveable card container #2",
     "Move card, refresh and see that changes remain"
