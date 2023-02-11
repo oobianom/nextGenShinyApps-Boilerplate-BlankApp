@@ -8,7 +8,7 @@
 
 rm(list = ls(all = TRUE))
 
-# attach library
+# Attach library
 library(shiny)
 library(nextGenShinyApps)
 library(shinyStorePlus)
