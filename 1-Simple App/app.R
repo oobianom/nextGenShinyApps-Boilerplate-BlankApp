@@ -19,7 +19,7 @@ ui <- fluidPage(
   style = "2",
 
   # Header: Insert header content using titlePanel ------------
-  header = titlePanel(left = "A Demo to Showcase the Features of the nextGenShinyApp R package", right = "Image logo"),
+  header = titlePanel(left = "App 1: Simple App with Moveable Cards", right = "Image logo"),
 
   # Sidebar: Insert content for sidebar ----------------------
   sidebar = sidebarPanel(
@@ -31,6 +31,10 @@ ui <- fluidPage(
       min = 1, max = 1000,
       value = c(200, 500)
     )
+  ),
+  card(
+    title = "Moveable card container #2",
+    "Move card, refresh and see that changes remain"
   ),
   card(
     title = "Moveable card container",
@@ -66,4 +70,4 @@ server <- function(input, output, session){
 
 
 # Run the application
-shinyApp(ui, server)
+shinyApp(ui = ui, server = server)
