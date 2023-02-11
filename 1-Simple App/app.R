@@ -11,7 +11,6 @@ rm(list = ls(all = TRUE))
 # Attach library
 library(shiny)
 library(nextGenShinyApps)
-library(shinyStorePlus)
 
 # Define UI
 ui <- fluidPage(
@@ -32,9 +31,6 @@ ui <- fluidPage(
       value = c(200, 500)
     )
   ),
-
-  # Initiate shinyStorPlus
-  initStore(),
 
   # Body --------------------------------------
   altPanel(card(
@@ -68,10 +64,6 @@ server <- function(input, output, session) {
   output$sampleplot <- renderPlot({
     plot(x = sample(1:input$bins, 32, replace = TRUE), y = mtcars$hp)
   })
-
-  # include shinyStorePlus to track input
-  appid <- "application501"
-  setupStorage(appId = appid, inputs = TRUE)
 }
 
 
